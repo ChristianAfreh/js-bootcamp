@@ -1,0 +1,13 @@
+//Challenge Area
+
+let getTip = function(total, tipPercent = 0.2){
+    let result = total  * tipPercent
+    return 'The tip for '+total+'USD '+'is '+result+'USD.'
+}
+
+let tip1 = getTip(100)
+let tip2 = getTip(200)
+let tip3 = getTip(500,0.3)
+console.log(tip1)
+console.log(tip2)
+console.log(tip3)
