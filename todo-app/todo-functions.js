@@ -122,4 +122,8 @@ const toggleTodo = function (id) {
         return todo.id === id
     })
 
+    if (todoCheck !== undefined) {
+        todoCheck.completed = !todoCheck.completed
+    }
+
 }
