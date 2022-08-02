@@ -10,8 +10,8 @@ const getSavedTodos = function () {
 }
 
 //Save todos to localStorage
-const saveTodos = function () {
-    localStorage.setItem("todos1", JSON.stringify(todos1))
+const saveTodos = function (todos) {
+    localStorage.setItem("todos1", JSON.stringify(todos))
 }
 
 //Render application todos based on filters
@@ -70,7 +70,7 @@ const generateTodoDOM = function (todo) {
     todoEl.appendChild(checkboxEl)
     checkboxEl.addEventListener('change', function () {
         toggleTodo(todo.id)
-        saveTodos()
+        saveTodos(todos1)
         renderTodos(todos1, filters1)
     })
 
@@ -83,7 +83,7 @@ const generateTodoDOM = function (todo) {
     todoEl.appendChild(removeEl)
     removeEl.addEventListener('click', function () {
         removeTodo(todo.id)
-        saveTodos()
+        saveTodos(todos1)
         renderTodos(todos1, filters1)
     })
 
