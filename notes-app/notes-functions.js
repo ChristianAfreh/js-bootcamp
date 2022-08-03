@@ -49,6 +49,7 @@ const generateNoteDOM = function (note) {
 
     removeEl.addEventListener('click', function (e) {
         removeNote(note.id)
+        saveNotes(notes)
         renderNotes(notes, filters)
     })
 
