@@ -20,3 +20,8 @@ const people = [{
 const under30 = people.filter((person) => person.age < 30)
 
 console.log(under30)
+
+const equalTo22 = people.find((person) => person.age === 22
+)
+
+console.log(equalTo22.name)
