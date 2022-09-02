@@ -1,3 +1,5 @@
+'use strict'
+
 // const pS = document.querySelectorAll('p')
 
 // pS.forEach( function(p){
