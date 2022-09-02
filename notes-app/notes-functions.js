@@ -1,12 +1,7 @@
 // Read existing notes from localStorage
 const getSavedNotes =  () => {
     const notesJSON = localStorage.getItem('notes')
-
-    if (notesJSON !== null) {
-        return JSON.parse(notesJSON)
-    } else {
-        return []
-    }
+    return  notesJSON  !== null ?  JSON.parse(notesJSON) : []
 }
 
 // Save the notes to localStorage
@@ -58,7 +53,7 @@ const generateNoteDOM =  (note) => {
 //Sort notes by one of the three ways of sorting
 const sortNotes =  (notes, sortBy) => {
     if (sortBy === 'byEdited') {
-        return notes.sort(function (a, b) {
+        return notes.sort((a, b) => {
             if (a.updatedAt > b.updatedAt) {
                 return -1;
             }

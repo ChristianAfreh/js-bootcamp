@@ -1,12 +1,8 @@
 //Fetch existing todos from localStorage
 const getSavedTodos =  () => {
     const todoJson = localStorage.getItem('todos1')
-    if (todoJson !== null) {
-        return JSON.parse(todoJson)
-    }
-    else {
-        return []
-    }
+
+    return todoJson !== null ? JSON.parse(todoJson) : []
 }
 
 //Save todos to localStorage
@@ -99,7 +95,7 @@ const generateSummaryDOM =  (isCompletedTodos) => {
 // 1. Wire up button event
 // 2. Remove todo by id
 // 3. Save and rerender the todos list
-const removeTodo = function (id) {
+const removeTodo =  (id) => {
     const todoIndex = todos1.findIndex( (todo) => todo.id === id)
 
     if (todoIndex > -1) {
