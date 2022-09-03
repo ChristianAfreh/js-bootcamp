@@ -45,10 +45,14 @@ class Person{
     return bio
     }
 
-    setName(fullName){
+    set FullName(fullName){
         const names = fullName.split(' ')
         this.firstName = names[0]
         this.lastName = names[1]
+    }
+
+    get FullName(){
+        return `${this.firstName} ${this.lastName}`
     }
 }
 
@@ -71,14 +75,14 @@ class Employee extends Person{
 
 
 
-const me1 = new Employee('Chris','Daniels',27,'Tutor',['Racing','Hiking'])
-me1.setName('Francis Owusu')
-console.log(me1.getBio())
-console.log(me1.getYearsLeft())
+// const me1 = new Employee('Chris','Daniels',27,'Tutor',['Racing','Hiking'])
+// me1.setName('Francis Owusu')
+// console.log(me1.getBio())
+// console.log(me1.getYearsLeft())
 
 
-const me2 = new Person('Ernest','Oduro',28)
-console.log(me2.getBio())
+// const me2 = new Person('Ernest','Oduro',28)
+// console.log(me2.getBio())
 
 
 //Challenge
@@ -114,3 +118,8 @@ const student1 = new Student('Albert','Appiah',18,89,['Drawing','Swimming'])
 console.log(student1.getBio())
 student1.updateGrade(-30)
 console.log(student1.getBio())
+
+const employee1 = new Employee('Rita','Dominics',18,'Tutor',['Drawing','Swimming'])
+console.log(employee1.getBio())
+employee1.FullName='Caroline Gyimah'
+console.log(employee1.getBio())

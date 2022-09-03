@@ -12,8 +12,8 @@ const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 const game1 = new Hangman('Cat',2)
 
-puzzleEl.textContent = game1.getPuzzle()
-guessesEl.textContent = game1.getStatusMessage()
+puzzleEl.textContent = game1.Puzzle
+guessesEl.textContent = game1.StatusMessage
 
 // console.log(game1.remainingGuesses)
 // game1.getStatusMessage()
@@ -23,8 +23,8 @@ window.addEventListener('keypress',function(e){
     //tutorial used e.charCode(deprecated) and String.fromCharCode() method --> I used e.key instead
     const guess = e.key
     game1.makeGuess(guess)
-    puzzleEl.textContent = game1.getPuzzle()
-    guessesEl.textContent =  game1.getStatusMessage()
+    puzzleEl.textContent = game1.Puzzle
+    guessesEl.textContent =  game1.StatusMessage
    
    
 })
