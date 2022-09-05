@@ -1,3 +1,5 @@
+'use strict'
+
 // const pS = document.querySelectorAll('p')
 
 // pS.forEach( function(p){
@@ -98,13 +100,13 @@ const filters1 = {
 
 renderTodos(todos1, filters1)
 
-document.querySelector('#new-todo').addEventListener('input', function (e) {
+document.querySelector('#new-todo').addEventListener('input',  (e) => {
     filters1.searchText = e.target.value
     renderTodos(todos1, filters1)
 })
 
 
-document.querySelector('#todo-form').addEventListener('submit', function (e) {
+document.querySelector('#todo-form').addEventListener('submit',  (e) => {
     e.preventDefault()
     todos1.push({
         id: uuidv4(),
@@ -117,7 +119,7 @@ document.querySelector('#todo-form').addEventListener('submit', function (e) {
 })
 
 
-document.querySelector('#hide-completed').addEventListener('change', function (e) {
+document.querySelector('#hide-completed').addEventListener('change',  (e) => {
     filters1.hideCompleted = e.target.checked
     renderTodos(todos1, filters1)
 
