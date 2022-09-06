@@ -29,22 +29,40 @@ window.addEventListener('keypress', (e) => {
 
 })
 
-//Making an HTTP request
-const request = new XMLHttpRequest()
 
-request.addEventListener('readystatechange', (e) => {
-    if (e.target.readyState === 4 && e.target.status === 200) {
-        const data = JSON.parse(e.target.responseText)
-        console.log(data)
-    } else if (e.target.readyState === 4) {
-        console.log('An error has taken place.')
+getPuzzle((error, puzzle) => {
+    if (error) {
+        console.log(`Error: ${error}`)
+    } else {
+        console.log(puzzle)
     }
 })
 
+getCountryDetails('GH', (error, country) => {
+    if (error) {
+        console.log(`Error: ${error}`)
+    } else {
+        console.log(`Country name: ${country.name}`)
+    }
+})
+
+
+//Making an HTTP request
+// const request = new XMLHttpRequest()
+
+// request.addEventListener('readystatechange', (e) => {
+//     if (e.target.readyState === 4 && e.target.status === 200) {
+//         const data = JSON.parse(e.target.responseText)
+//         console.log(data)
+//     } else if (e.target.readyState === 4) {
+//         console.log('An error has taken place.')
+//     }
+// })
+
 // https://puzzle.mead.io/puzzle -- for random phrases
 // https://restcountries.com/v2/all -- for countries
-request.open('GET', 'https://restcountries.com/v2/all')
-request.send()
+// request.open('GET', 'https://restcountries.com/v2/all')
+// request.send()
 
 //Challenge
 // 1. Make a new request for all countries
@@ -52,19 +70,19 @@ request.send()
 // 3. Find your country object by its country code(alpha property)
 // 4. Print the full country name(name property)
 
-const countryCode = "GH"
+// const countryCode = "GH"
 
-const request1 = new XMLHttpRequest()
+// const request1 = new XMLHttpRequest()
 
-request1.addEventListener('readystatechange', (e) => {
-    if (e.target.readyState === 4 && e.target.status === 200) {
-        const data = JSON.parse(e.target.responseText)
-        const country = data.find((item) => item.alpha2Code === countryCode)
-        console.log(country.name)
-    } else if (e.target.readyState === 4) {
-        console.log('An error has taken place.')
-    }
-})
+// request1.addEventListener('readystatechange', (e) => {
+//     if (e.target.readyState === 4 && e.target.status === 200) {
+//         const data = JSON.parse(e.target.responseText)
+//         const country = data.find((item) => item.alpha2Code === countryCode)
+//         console.log(country.name)
+//     } else if (e.target.readyState === 4) {
+//         console.log('An error has taken place.')
+//     }
+// })
 
-request1.open('GET', 'https://restcountries.com/v2/all')
-request1.send()
+// request1.open('GET', 'https://restcountries.com/v2/all')
+// request1.send()
