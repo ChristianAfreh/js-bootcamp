@@ -30,20 +30,20 @@ window.addEventListener('keypress', (e) => {
 })
 
 
-getPuzzle('2').then((puzzle) => {
+getPuzzle(2).then((puzzle) => {
     console.log(puzzle)
-}, (err) => {
-    console.log(`Error: ${err}`)
+}).catch((error) => {
+    console.log(error)
 })
 
 
 
 
-getCountryDetails('GH').then((country) => {
-    console.log(`Country name: ${country.name}`)
-}, (err) => {
-    console.log(err)
-})
+// getCountryDetails('GH').then((country) => {
+//     console.log(`Country name: ${country.name}`)
+// }, (err) => {
+//     console.log(`Error: ${err}`)
+// })
 
 
 //Making an HTTP request
@@ -85,3 +85,15 @@ getCountryDetails('GH').then((country) => {
 
 // request1.open('GET', 'https://restcountries.com/v2/all')
 // request1.send()
+
+// fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+//     if (response.status === 200) {
+//         return response.json()
+//     } else {
+//         throw new Error('Unable to fetch the puzzle')
+//     }
+// }).then((data) => {
+//     console.log(data.puzzle)
+// }).catch((error) => {
+//     console.log(error)
+// })
