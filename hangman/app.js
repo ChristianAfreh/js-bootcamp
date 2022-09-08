@@ -40,11 +40,26 @@ getPuzzle(2).then((puzzle) => {
 
 
 // getCountryDetails('GH').then((country) => {
-//     console.log(`Country name: ${country.name}`)
-// }, (err) => {
-//     console.log(`Error: ${err}`)
+//     console.log(country)
+// }).catch((error) => {
+//     console.log(error)
 // })
 
+
+// getLocation().then((location) => {
+//     return getCountryDetails(location.country)
+// }).then((country) => {
+//     console.log(country)
+// }).catch((error) => {
+//     console.log(error)
+// })
+
+
+getCurrentCountry().then((country) => {
+    console.log(country)
+}).catch((error) => {
+    console.log(error)
+})
 
 //Making an HTTP request
 // const request = new XMLHttpRequest()
