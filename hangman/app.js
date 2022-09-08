@@ -10,10 +10,10 @@
 
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
-const game1 = new Hangman('car parts', 2)
+let game1
 
-puzzleEl.textContent = game1.Puzzle
-guessesEl.textContent = game1.StatusMessage
+// puzzleEl.textContent = game1.Puzzle
+// guessesEl.textContent = game1.StatusMessage
 
 // console.log(game1.remainingGuesses)
 // game1.getStatusMessage()
@@ -23,18 +23,31 @@ window.addEventListener('keypress', (e) => {
     //tutorial used e.charCode(deprecated) and String.fromCharCode() method --> I used e.key instead
     const guess = e.key
     game1.makeGuess(guess)
+    render()
+
+
+})
+
+const render = () => {
     puzzleEl.textContent = game1.Puzzle
     guessesEl.textContent = game1.StatusMessage
 
+}
 
-})
+const startGame = async () => {
+    const puzzle = await getPuzzle('2')
+    game1 = new Hangman(puzzle, 5)
+    render()
+}
 
 
-getPuzzle(2).then((puzzle) => {
-    console.log(puzzle)
-}).catch((error) => {
-    console.log(error)
-})
+document.querySelector('#reset').addEventListener('click', startGame)
+
+// getPuzzle(2).then((puzzle) => {
+//     console.log(puzzle)
+// }).catch((error) => {
+//     console.log(error)
+// })
 
 
 
@@ -55,11 +68,11 @@ getPuzzle(2).then((puzzle) => {
 // })
 
 
-getCurrentCountry().then((country) => {
-    console.log(country)
-}).catch((error) => {
-    console.log(error)
-})
+// getCurrentCountry().then((country) => {
+//     console.log(country)
+// }).catch((error) => {
+//     console.log(error)
+// })
 
 //Making an HTTP request
 // const request = new XMLHttpRequest()
