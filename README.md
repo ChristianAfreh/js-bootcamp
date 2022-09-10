@@ -4,4 +4,4 @@ Link to ToDo App --> https://chrisdev-todo.netlify.app/
 
 Link to Notes App --> https://chrisdev-notes-app.netlify.app/
 
-Link to Hangman Game --> disillusioned-love.surge.sh
+Link to Hangman Game --> disillusioned-love.surge.sh OR https://chrisdev-hangman-game.netlify.app/
