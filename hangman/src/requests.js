@@ -51,6 +51,10 @@ getCurrentCountry = async () => {
     return getCountryDetails(location.country)
 }
 
+
+
+export { getPuzzle as default }
+
 // .then((response) => {
 //     if (response.status === 200) {
 //         return response.json()
