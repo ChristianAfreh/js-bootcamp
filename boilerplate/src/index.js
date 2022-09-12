@@ -3,14 +3,10 @@
 //npm install babel-preset-env@1.6.1
 //babel input.js --out-file output.js
 
-const name = 'Mike'
-console.log(name)
+import otherSquare, { add, name } from './utilities'
+import screamName from './scream'
 
-class Hangman {
-    myMethod() {
-        return 'Testing'
-    }
-}
+console.log(add(32, 1))
+console.log(screamName(name))
+console.log(otherSquare(10))
 
-const hangman = new Hangman()
-console.log(hangman.myMethod())
