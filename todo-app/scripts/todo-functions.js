@@ -56,7 +56,7 @@ const renderTodos = (todos, filters) => {
     } else {
         const messageEl = document.createElement('p')
         messageEl.classList.add('list-title')
-        messageEl.textContent = 'No todos to show'
+        messageEl.textContent = 'There are no todos to show'
         todoEl.appendChild(messageEl)
     }
 
