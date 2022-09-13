@@ -56,6 +56,8 @@ class Hangman {
         }
 
         if (isUnique) {
+            //using spread syntax
+            //this.guessedLetters = [...this.guessedLetters,guess]
             this.guessedLetters.push(guess)
         }
 
