@@ -14,6 +14,8 @@ const getFilters = () => filters
 // Arguments: updates object with optional searchText or hideCompleted
 // Return value: none
 const setFilters = (updates) => {
+
+    //using destructuring parse --> {searchText,hideCompleted} as parameters instead of updates object
     if (typeof updates.searchText === 'string') {
         filters.searchText = updates.searchText
     }

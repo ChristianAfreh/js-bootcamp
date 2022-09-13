@@ -8,7 +8,7 @@ import { getFilters } from "./filters"
 // Return value: none
 const renderTodos = () => {
     const todoEl = document.querySelector('#todo-text')
-    const filters = getFilters()
+    const filters = getFilters() //Alternative --> destructure filter object into {searchText,hideCompleted}
     const todos = getTodos()
     const filteredTodos = todos.filter((todo) => {
         const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
