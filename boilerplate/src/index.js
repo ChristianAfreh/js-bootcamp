@@ -1,42 +1,27 @@
-import Hangman from './hangman'
-import getPuzzle from './requests'
+
+//The rest parameter
+const calculateAverage = (thing, ...numbers) => {
+    //return (numOne + numTwo) / 2
+    let sum = 0
+    numbers.forEach((num) => sum += num)
+    const average = sum / numbers.length
+    return `The average ${thing} is ${average}`
+}
+
+console.log(calculateAverage('score', 0, 100, 200, 30, 400))
+
+//Challenge
+//Create printTeam that takes team name,coach and players
+//Team: Liberty
+//Coach: Casey Penn
+//Players: Marge,Aiden,Herbert,Sherry
 
 
-
-const puzzleEl = document.querySelector('#puzzle')
-const guessesEl = document.querySelector('#guesses')
-let game1
-
-window.addEventListener('keypress', (e) => {
-    const guess = String.fromCharCode(e.charCode)
-    game1.makeGuess(guess)
-    render()
-
-
-})
-
-const render = () => {
-    puzzleEl.innerHTML = ''
-    guessesEl.textContent = game1.statusMessage
-
-    game1.puzzle.split('').forEach((letter) => {
-        const letterEl = document.createElement('span')
-        letterEl.textContent = letter
-        puzzleEl.appendChild(letterEl)
-    })
-
+const printTeam = (teamName, coachName, ...players) => {
+    console.log(`Team: ${teamName}`)
+    console.log(`Coah: ${coachName}`)
+    console.log(`Players: ${players.join(', ')}`)
 }
 
 
-
-const startGame = async () => {
-    const puzzle = await getPuzzle('2')
-    game1 = new Hangman(puzzle, 5)
-    render()
-}
-
-
-document.querySelector('#reset').addEventListener('click', startGame)
-
-startGame()
-
+printTeam('Liberty', 'Casey Penn', 'Marge', 'Aiden', 'Herbert', 'Sherry')
